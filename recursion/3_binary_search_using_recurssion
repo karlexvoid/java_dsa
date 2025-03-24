@@ -1,0 +1,26 @@
+
+f(n) =   o(1) comparing + f(n/2) find in other half (reccurence relation)
+
+
+
+
+return = binarysearch(arr,start,end,num)
+
+
+static int binarysearch(int arr[],start,end,num){
+    //exit statement 
+    if(start>end){
+        return -1;
+    }
+
+    int middle = start + (end-start)/2;
+    if(arr[middle] == num){
+        return middle;
+    }
+    if(num > arr[middle]){
+        return binarysearch(arr,middle+1,end,num);
+    }
+    else{
+        return binarysearch(arr,start,middle-1,num);
+    }
+}

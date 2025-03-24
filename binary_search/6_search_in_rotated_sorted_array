@@ -1,0 +1,75 @@
+search in rotated sorted array 
+https://leetcode.com/problems/search-in-rotated-sorted-array/
+
+	class Solution {
+
+	    public int binarySearch(int start ,int end ,int target,int[] nums,boolean rev){
+	        while(start <= end){
+	            int middle = start + (end-start)/2;
+	            if(rev){
+	                if(nums[middle] > target){
+	                    start = middle+1;
+	                }
+	                else if(nums[middle] < target){
+	                    end = middle -1;
+	                }
+	                else{
+	                    return middle;
+	                }
+	            }
+	            else{
+	                if(nums[middle] < target){
+	                    start = middle+1;
+	                }
+	                else if(nums[middle] > target){
+	                    end = middle -1;
+	                }
+	                else{
+	                    return middle;
+	                }
+	            }
+	        }
+	        return -1;
+	    }
+	    public int findPivot(int start, int end ,int[] nums){
+	        while(start < end){
+	            int middle = start + (end-start)/2;
+
+	            //case 1 when middle > middle +1 
+	            if(end > middle && nums[middle] > nums[middle+1]){
+	                return middle;
+	            }
+
+	            //case 2 when middle -1 > middle 
+	            if(start < middle && nums[middle-1] > nums[middle]){
+	                return middle-1;
+	            }
+
+	            //case 3 when start is greater than middle that means that pivot point lies on left side 
+	            //so new middle will be middle -1
+	            if(nums[start] > nums[middle]){
+	                end = middle-1;
+	            }
+	            else{
+	                //middle element is greater than start 
+	                start = middle+1;
+	            } 
+	        } 
+	        return -1;
+	    }
+	    public int search(int[] nums, int target) {
+	        //find pivot  array 
+	        int start = 0;
+	        int end = nums.length-1;
+	        int pivot = findPivot(start,end,nums);
+	        int ans = -1;
+
+	        //binary search in left side
+	        ans = binarySearch(0,pivot,target,nums,false);
+	        if(ans == -1){
+	            //binary search in right side 
+	            ans = binarySearch(pivot+1,nums.length-1,target,nums,false);
+	        }
+	        return ans;
+	    }
+	}

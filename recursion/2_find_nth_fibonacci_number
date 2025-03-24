@@ -1,0 +1,49 @@
+https://leetcode.com/problems/fibonacci-number/
+
+base condtion : 
+    f(0) => 0
+    f(1) => 1
+
+reccurence solution :
+    f(n) => f(n-1) + f(n-2) 
+
+
+
+
+
+    class Solution {
+        public int fib(int n) {
+
+            return fibofunction(n);
+        }
+
+        public int fibofunction(int n){
+            if(n<2){
+                return n;
+            }
+            return fibofunction(n-1) + fibofunction(n-2);
+        }
+    }
+
+
+
+tail recursion : 
+
+
+    class Solution {
+        public int fib(int n) {
+            if(n==0){
+                return 0;
+            }
+            return fibofunction(n,2,0,1);
+        }
+
+        public int fibofunction(int n,int temp,int first,int second){
+            if(temp > n-1){
+                return first+second;  
+            }
+            return fibofunction(n,temp+1,second,(first+second));
+        }
+    }
+
+

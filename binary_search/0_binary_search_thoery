@@ -1,0 +1,50 @@
+Binary search : 
+
+	binary search is a searching algorithm 
+	used in a sorted array 
+	reapeatedly dividing the search interval in half until the target value is found or the interval is empty
+
+	class Solution {
+	    public int search(int[] nums, int target) {
+	    int left = 0;
+	    int right = nums.length - 1;
+
+	    while (left <= right) {
+	        int middle = left + (right - left) / 2;
+
+	        if (nums[middle] == target) {
+	            return middle; // Target found, return index
+	        }
+
+	        if (nums[middle] > target) {
+	            right = middle - 1; // Search in the left half
+	        } else {
+	            left = middle + 1; // Search in the right half
+	        }
+	    }
+
+	    return -1; // Target not found
+	    }
+	}
+
+
+	In some cases where the values of left and right are very large (e.g., close to the maximum value of an integer), adding them directly (right + left) might exceed the maximum value an integer can hold, leading to an integer overflow
+
+
+	best case : o(1)
+	worst case : o(log n)
+
+
+	order agnostic binary search 
+		(used in condtion in which we don't know if the array is sorted in ascending or dscending order)
+
+	what type of questions to apply the binary search : 
+
+		something to do with binary search 
+		squence of number in sorted 
+
+
+
+
+
+

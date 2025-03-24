@@ -1,0 +1,143 @@
+Split array largest sum 
+https://leetcode.com/problems/split-array-largest-sum/description/
+
+#important
+
+    we have a question like : 
+
+    Given an integer array nums and an integer k, split nums into k non-empty subarrays such that the largest sum of any subarray is minimized.  
+
+    eg- nums = [7,2,5,10,8] , k = 2
+
+        approach 1 : 
+
+            so let find the range of the sum 
+
+            case 1 : when the max sum between the subarrays would be minimum : 10 
+            case 2 : when the max sum between the subarrays would be maximum : 32
+
+            so we got the range [10,32]
+                            k = [5,1]
+
+            one more thing we understood here that the more the pieces we are dividing the array in the less is the max sum 
+            and the less are peices the more is the max sum between them 
+
+            now we can apply binary search over here 
+
+                so our 
+
+                start = 10 , end = 32 
+                middle = 21 
+
+                21 might be a possible answer , try to see if you can split the entire array with 21 as the max sum -
+
+                7 > 21 ,  [7]
+                7+2 > 21 , [7,2]
+                7+2+5 > 21 , [7,2,5]
+                7+2+5+10 > 21 , no so [7,2,5] , peceice = 1
+                10 > 21 , [7,2,5] [10]
+                10+8 > 21 , [7,2,5] [10,8]  , peceice = 2
+
+                is peceices <= k 
+                    2 <= 2 
+                    so now we want the peceices to be less so we will dec the sum 
+
+                    here it clicked that we can use binary search 
+                    
+                start = 10 , end = 21
+                middle = 15 
+
+                [7,2,5]
+                [10]
+                [8]
+
+                peceice = 3
+                3 <= 2 no 
+                so we took a little less sum 
+                so we will increase the sum now 
+
+                start = 16 , end = 21
+                middle = 18
+
+                [7,2,5]
+                [10,18]
+
+
+                pececise 2
+
+                so it is equal to k 
+                no we need a little less sum end = 18
+
+                start 16 , end = 18
+                middle = 17 
+
+                7,2,5
+                10
+                18 
+                peceice = 3
+
+                now we need a bigger sum  
+                start = 18 , end = 18 
+                middle = 18 
+                this is our answer 
+
+                the ans exists definelly and using these two checks 
+                if pec <= k move towards start , dec sum 
+                if pec > k then move towards end , inc sum 
+                using these at every iteration we will be closer towards our condition till the loop break when all three are same 
+
+
+                class Solution {
+                    public int splitArray(int[] nums, int k) {
+                        int start = 0;
+                        int end = 0;
+
+                        //start will me max in nums 
+                        //end will be sum of all array
+                        
+                        for(int i=0;i<nums.length;i++){
+                            start = Math.max(start,nums[i]);
+                            end += nums[i];
+                        }
+
+                        //binary searh 
+                        while(start < end){
+                            int mid = start + (end-start)/2;
+                            //try for middle as potential answer
+                            int pieces = 1;
+                            //pieces atleast will be 1 
+                            int sum = 0;
+                            for(int i = 0; i < nums.length; i++){
+                                if(sum+nums[i] > mid){
+                                    //you cannot add this into this subarray so you need to make new one 
+                                    //we need to make a new subarry 
+                                    sum = nums[i];
+                                    pieces++;
+                                }
+                                else{
+                                    sum += nums[i];
+                                }
+                            }
+
+                            if(pieces > k){
+                                //we need a bigger sum
+                                start = mid+1;
+                            }
+                            else{
+                                //we need a lesser sum 
+                                end = mid;
+                            }
+                        }
+
+                        return end;
+                    }
+                }
+
+
+
+
+
+
+
+
+

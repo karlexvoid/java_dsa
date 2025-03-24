@@ -1,0 +1,4 @@
+how to approach : 
+    step 1 -> no of line = no of rows = no of time outher loop will learn 
+    step 2 -> identify for every row , how many columns are there or types of element in the column 
+    step 3 -> what do you need to print

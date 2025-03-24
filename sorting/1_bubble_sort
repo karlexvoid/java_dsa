@@ -1,0 +1,44 @@
+we compare adjacent elements 
+
+first pass : 
+
+    3 1 5 4 2 
+    1 3 5 4 2
+    1 3 4 5 2 
+    1 3 4 2 5 
+
+    with the first pass through the array the largest element came to the end 
+
+second pass : 
+
+    1 3 4 2 5 
+    1 3 2 4 5 
+
+third pass : 
+
+    1 3 2 4 5
+    1 2 3 4 5 
+
+also know are sinking sort and exchange sort 
+
+in these no extra space is required they are also known as inplace sorting algorithm.
+
+
+static void bubble(int[] arr){
+    //run the steps n-1 times 
+    for(int i =0; i < arr.length; i++){
+        //for each step , max item will come at the last respective index 
+        for(int j = 1; j < arr.length-i;j++){
+            //swap if item is smaller than the previous item 
+            if(arr[j] < arr[j-1]){
+                //swap 
+                int temp = arr[j];
+                arr[j] = arr[j-1];
+                arr[j-1] = temp;
+            }
+        }
+    }
+
+}
+
+stability : yes 

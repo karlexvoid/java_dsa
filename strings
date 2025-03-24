@@ -1,0 +1,37 @@
+Most things that start with a capital letter in Java are classes, but interfaces, enums, and constants also follow this convention
+
+
+String name = "abhishek";
+    String - datatype 
+    name - reference variable
+    "abhishek" - object
+
+
+1. Heap : Think of heap memory like a big warehouse where Java stores all objects.
+        Whenever you create an object using new, Java reserves space in the heap.
+        The Garbage Collector (GC) is like a cleaner that removes unused objects automatically.
+
+2. String Pool : Java optimizes memory usage by storing strings in a special area of heap memory called the String Pool.
+    String s1 = "hello"; // Stored in String Pool
+    String s2 = "hello"; // Reuses the same "hello" from String Pool
+    String s3 = new String("hello"); // New object in heap, NOT in the pool
+
+3. immutability : A String is immutable in Java, meaning once created, it cannot be changed. If you try to modify it, Java creates a new String instead of modifying the original.
+
+
+String comparision via equals : it only compares value and not the objects 
+
+
+Print Stream class 
+function overloading 
+function overridding 
+to.Sting()
+Pretty Printing 
+format specifiers 
+operators 
+    when a integer is conactenated - added into string it will become like this "a"+1 = a1 , interger will call to.String() method
+String Performance : String Builder 
+String methods 
+
+Question : 
+    if a string is a palidromne or not 

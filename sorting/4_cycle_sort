@@ -1,0 +1,37 @@
+#important
+when given nos. from range 1,N => use cyclic sort 
+
+arr = 3 , 5 , 2 , 1 , 4
+
+after sorting : 
+    1 , 2 , 3 , 4 , 5 
+    index = val - 1 , because index val starts from 0 
+
+
+    int arr = {3,5,2,1,4};
+    int i = 0;
+
+    while(i < arr.length){
+        int correct = arr[i] - 1 ;
+        if(arr[i] != arr[correct]){
+           swap(arr,i,correct); 
+        }
+        else{
+            i++;
+        }
+    }
+
+    static void swap(int[] arr,int first, int second){
+        int temp = arr[first];
+        arr[first] arr[second];
+        arr[second] = temp;
+    }
+
+
+questions : 
+    missing numbers : https://leetcode.com/problems/missing-number/description/
+    find all the numbers disappeared in an array : https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
+    find the duplicate : https://leetcode.com/problems/find-the-duplicate-number/submissions/1577762635/
+    find all the duplicate numbers from the array : https://leetcode.com/problems/find-all-duplicates-in-an-array/description/
+    set mismatch : https://leetcode.com/problems/set-mismatch/description/
+    find missing positive : https://leetcode.com/problems/first-missing-positive/description/

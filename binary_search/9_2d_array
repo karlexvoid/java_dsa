@@ -1,0 +1,138 @@
+
+#important
+sometimes in interview and dsa question if the data sets are bigger , try to see how you can minimize the search space 
+
+
+
+below two approached will not cover a matric like this
+
+    [1,4,7,11,15]
+    [2,5,8,12,19]
+    [3,6,9,16,22]
+
+    there the correct answer will be this : 
+                        
+        class Solution {
+            public boolean searchMatrix(int[][] matrix, int target) {
+            
+                int r = 0;
+                int c = matrix[0].length -1;
+                while (r < matrix.length && c >= 0) {
+                    if(matrix[r][c] == target){
+                        return true;
+                    }
+                    if(matrix[r][c] < target){
+                        r++;
+                    }
+                    else{
+                        c--;
+                    }
+                }
+                return false;
+            }
+        }
+
+        better sol for my approach only
+            class Solution {
+                public boolean searchMatrix(int[][] matrix, int target) {
+                int row = matrix.length;
+                    int col = matrix[0].length;
+                    int left = 0, right = row * col - 1;
+            
+                    while (left <= right) {
+                        int mid = left + (right - left) / 2;
+                        int midValue = matrix[mid / col][mid % col]; // Convert 1D index to 2D
+            
+                        if (midValue == target) {
+                            return true;
+                        } else if (midValue < target) {
+                            left = mid + 1;
+                        } else {
+                            right = mid - 1;
+                        }
+                    }
+            
+                    return false;
+                }
+            }
+
+        my approach 
+            class Solution {
+                public boolean searchMatrix(int[][] matrix, int target) {
+                    int row = matrix.length;        
+                    int col = matrix[0].length;    
+
+                    int s_0 = 1;
+                    int s_1 = 1;
+                    int start = ((s_0 - 1) * col) + s_1;
+
+                    int e_0 = row;
+                    int e_1 = col;
+                    int end = ((e_0 - 1) * col) + e_1;
+
+                    int middle = start + (end-start)/2;
+                    while(start < end ){
+                        middle = start + (end-start)/2;
+                        int m_0 = 1;
+                        int m_1 = 1;
+                    
+                        if(middle > col){
+                            m_0 = middle/col;
+                            if(((m_0*col) - middle) == 0 ){
+                                m_1 = col;
+                            }
+                            else if(((m_0*col) - middle) < 0){
+                                m_0 += 1;
+                                m_1 = middle%col;
+                            }
+                            else{
+                                m_1 = middle%col;
+                            }
+                        }
+                        else{
+                            m_0 = 1;
+                            m_1 = middle;
+                        }
+
+                        if(matrix[m_0-1][m_1-1] == target){
+                            return true;
+                        }
+                        else if(matrix[m_0-1][m_1-1] > target){
+                            if(m_1 == col){
+                                e_0 = m_0-1;
+                                e_1 = 1;
+                            }
+                            else{
+                                e_0 = m_0;
+                                e_1 = m_1-1;
+                            }
+                        }
+                        else{
+                            if(m_1 == col){
+                                s_0 = m_0+1;
+                                s_1 = 1;
+                            }
+                            else{
+                                s_0 = m_0;
+                                s_1 = m_1+1;
+                            }
+                        
+                        }
+
+                        start = ((s_0 - 1) * col) + s_1;
+                        end = ((e_0 - 1) * col) + e_1;
+                    }
+
+                    if(e_0 > 0 && e_1 > 0 && matrix[e_0-1][e_1-1] == target ){
+                        return true;
+                    }
+                    if(s_0 > 0 && s_1 > 0 && matrix[s_0-1][s_1-1] == target ){
+                        return true;
+                    }
+                    return false;
+                }
+            }
+
+
+    another unique approach for strictly sorted matrix 
+    https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/lectures/10-binary%20search/code/src/com/kunal/SortedMatrix.java
