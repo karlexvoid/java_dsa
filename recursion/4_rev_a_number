@@ -1,0 +1,24 @@
+
+    public class Reverse{
+
+        //with using outside value
+        static int  sum = 0;
+        static void rev1(int n){
+            if(n==0){
+                return;
+            }
+            int rem = n%10;
+            sum = sum*10 + rem;
+            rev(n/10);
+        }
+
+        //without using outside value
+        static void rev2(int n){
+            //did'nt understood 
+        }
+
+
+        public static void main (String[] args){
+            rev1(1234);
+        }
+    }

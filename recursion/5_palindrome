@@ -1,0 +1,60 @@
+palindrome 
+
+ABCCBA = reverse is also same this is called palindrome
+
+ABA = ABA 
+
+if(string.legnth<2){
+    return 1;
+}
+
+f(s) = check first and last(if this fails at any point return 0;) , f(rest,string)
+
+public class PalindromeCheck {
+    public static int palindrome(String s) {
+        // Base Case: If the string is empty or has only one character, it's a palindrome
+        if (s.length() == 0 || s.length() == 1) {
+            return 1;
+        }
+        
+        // Check if first and last characters are the same
+        if (s.charAt(0) != s.charAt(s.length() - 1)) {
+            return 0; // Not a palindrome
+        }
+        
+        // Recursive call: Check the substring without first and last character
+        return palindrome(s.substring(1, s.length() - 1));
+    }
+
+    public static void main(String[] args) {
+        // Test Cases
+        System.out.println(palindrome("racecar")); // Output: 1 (Palindrome)
+        System.out.println(palindrome("hello"));   // Output: 0 (Not a palindrome)
+        System.out.println(palindrome("a"));       // Output: 1 (Palindrome)
+        System.out.println(palindrome(""));        // Output: 1 (Palindrome)
+        System.out.println(palindrome("madam"));   // Output: 1 (Palindrome)
+    }
+}
+
+
+
+
+count no of zeros 
+public class MyClass {
+    public static void main(String args[]) {
+        System.out.println(checkZeros(260903000,0));
+    }
+    public static int checkZeros(int n, int count){
+        if(n/10 == 0){
+            if(n%10 == 0){
+                count++;
+            }
+            return count;
+        }
+    
+        if(n%10 == 0){
+            count++;
+        }
+        return checkZeros(n/10,count);
+    }
+}

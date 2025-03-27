@@ -1,14 +1,11 @@
     binary search 
     sorting 
-recursion
+recursion 
 linked list 
 stacks and Queues 
 Trees 
 maps  
 other imp alogo questions 
-
-
-
 
 
 intro to java : core
@@ -19,8 +16,11 @@ strings
 time and space comp
 maths for dsa 
 
-
-
+24 - 29 ---- recursion , maths and spact time complexity 
+30 - 05 ---- oops , strings , collections 
+06 - 12 ---- linkedlist and stack queues 
+13 - 19 ---- trees 
+20 - 26 ---- maps,graph and other important algo
 
 
 must do questions for interview : 
@@ -97,7 +97,7 @@ Questions (0/75)
         valid parenthesis 
         valid anagrams 
         minimum window substring 
-        valid palindrome
+            valid palindrome
         longest palnedromic substring 
         palindromic substring 
         encode and decode strings 
@@ -122,3 +122,11 @@ Questions (0/75)
         merge k sorted lists 
         top k frequent elements
         find median from date stream 
+
+
+
+
+
+        To Be Revised : 
+
+            how to reverse a number with recursion

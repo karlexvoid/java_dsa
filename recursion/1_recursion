@@ -41,6 +41,11 @@ two key points :
         body 
 
 types of reccurence relation : 
-    linear reccurence relation -> fibonacci 
+    linear reccurence relation -> fibonacci -- not a good approach , because repeated function calls , so we use dynamic programming here 
     divide and conquer -> binary search 
             (search space is reduced by a factor)
+
+
+
+some tips : 
+--n means first n will be subtracted then passed and n-- means first n will be passed and then substracted 
