@@ -55,6 +55,7 @@ linear search array
 linear search return all the indexes
 
 
+<<<<<<< HEAD
  f(arr,target,index,arraylist) = check store in array list + f(arr,target,index,arraylist)
 
  public static ArrayList<Integer> allIndexes(int[] arr,int target,int index ,ArrayList<Integer> result){
@@ -68,3 +69,92 @@ linear search return all the indexes
 
     return allIndexes(arr,target,index,result);
  }
+=======
+f(arr,target,index,arraylist) = check store in array list + f(arr,target,index,arraylist) 
+
+
+
+
+return the array list without passing the argument 
+
+    globally store the array list 
+
+    call the funtion without any return type 
+
+    keep adding into the list 
+
+    in main print the list 
+
+
+rotated binary search using recursion 
+
+    arr = {5,6,7,1,2,3,4}
+
+        approach 1 -> find the pivot point and the apply binary search for both the parts 
+
+        pivot conditions : 
+
+            arr[middle] > arr[middle+1] 
+            arr[middle] < arr[middle-1]
+
+            middle is pivot 
+
+        main{
+            int pivot = findPivot(arr);
+            if(num between pivot and start ){
+                binarySearchRecursion(arr,num,start,pivot);
+            }
+            else{
+                binarySearchRecursion(arr,num,pivot+1,end);
+            }
+        }
+        findPivot(arr){
+            int start = 0;
+            int end = arr.length - 1;
+            
+            while(start <= end){
+                int mid = start + (end - start) / 2;
+
+                if(mid < end && arr[mid] > arr[mid + 1]){
+                    return mid;
+                }
+                if(mid > start && arr[mid]<arr[mid-1]){
+                    return mid-1;
+                }
+
+
+                if(arr[mid] <= arr[end]){
+                    end = mid-1;
+                }
+                else{
+                    start = mid+1;
+                }
+            }
+
+            return -1;
+        }
+        public static int binarySearchRecursion(int[] arr,int num , int start , int end ){
+            if (start > end) {
+                return -1; // Element not found
+            }
+            
+            int mid = start + (end - start) / 2;
+        
+            if (arr[mid] == num) {
+                return mid; // Element found at index mid
+            }
+            else if (num > arr[mid]) {
+                // Search in the right half
+                return binarySearchRecursion(arr, num, mid + 1, end);
+            }
+            else {
+                // Search in the left half
+                return binarySearchRecursion(arr, num, start, mid - 1);
+            }
+        }
+
+
+
+
+
+>>>>>>> d77ce2ceecd4ef16216ddc077e21ad9f4d56474b

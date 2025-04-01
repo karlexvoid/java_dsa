@@ -1,0 +1,15 @@
+bubble sort 
+
+4,3,5,1,2 
+
+
+main(){
+    bubbleRecursion(arr,0,1);
+}
+
+
+
+f(arr) = compare update + f(arr) ,,, till i == arr.length - 1 and j == arr.length-2 
+
+
+
