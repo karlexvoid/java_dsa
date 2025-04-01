@@ -55,4 +55,16 @@ linear search array
 linear search return all the indexes
 
 
-f(arr,target,index,arraylist) = check store in array list + f(arr,target,index,arraylist) 
+ f(arr,target,index,arraylist) = check store in array list + f(arr,target,index,arraylist)
+
+ public static ArrayList<Integer> allIndexes(int[] arr,int target,int index ,ArrayList<Integer> result){
+    if(index == arr.length){
+        return result;
+    }
+    
+    if(arr[index] == target){
+        result.add(index);
+    }
+
+    return allIndexes(arr,target,index,result);
+ }
