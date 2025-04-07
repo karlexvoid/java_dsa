@@ -1,0 +1,101 @@
+
+React basics 
+
+    1. What is React, and why is it used?
+        react is a front end lib based for building user interfaces using that uses reusable components.
+
+    2. What are the main features of React?
+        component based arcitecture
+        virtual dom for fast rendering 
+        resuable components 
+        one way data binding 
+        hooks for managing state and lifecycle
+        static site rendering via next js 
+     
+
+    3. What is JSX, and why is it used in React?
+        JSX stands for JavaScript XML. It lets you write HTML-like syntax inside JavaScript, which makes your UI easier to read and write in React.
+
+    4. How is React different from other front-end frameworks like Angular and Vue?
+        React is a library focused on UI with a lightweight core.
+        Angular is a full-fledged framework with built-in routing and state.
+        Vue is also a framework but easier to learn, with a React-like syntax.
+
+    5. What are props in React? How do they work?
+        Props (short for properties) are used to pass data from a parent component to a child. They are read-only and cannot be changed by the child component.
+
+    6. What is state in React? How is it different from props?
+        State is internal data managed within a component using useState. It can be changed, and when it updates, the component re-renders.
+            Props: passed from parent, read-only
+            State: internal to a component, can change over time
+
+
+    7. Can you change the state directly in React? Why or why not?
+        No. You should never modify state directly. Always use the setState function (in class components) or setSomething from useState.
+
+    8. What is the difference between function components and class components?
+        function compoments : like a normal javascript function , uses react hooks like useState , 
+        class compoments : a javascript class that extends react.compoment , uses this.state 
+
+    9. How does React handle one-way data flow?
+        Data in React flows from parent to child via props. This ensures better control and predictability in how data changes affect the UI.
+
+    10.What are default props in React? How do you define them?
+        If no prop is passed, React uses a default value., can create using .defaultProps 
+
+    11.What is the significance of key in React lists?
+        key is a special prop that helps React track items in a list and know which item changed, added, or removed.
+        {items.map(item => <li key={item.id}>{item.name}</li>)}
+        Without keys, React re-renders everything. With keys, React updates only what's changed.
+
+    12.How does React optimize updates in the Virtual DOM?
+        React creates a virtual copy of the DOM, compares it with the previous one (called "diffing"), and only updates the changed parts in the real DOM.
+
+    13.Can React work without JSX? If yes, how?
+        yes , React.createElement("h1", null, "Hello");
+
+    14.What are fragments in React, and why are they useful?
+        Fragments let you group elements without adding extra divs
+        <>
+            <h1>Hello</h1>
+            <p>Welcome</p>
+        </>
+
+    15.What is the purpose of React Portals?
+        React Portals allow you to render a component outside the main root DOM tree, like for modals or tooltips.
+
+    16.What is the difference between controlled and uncontrolled components?
+        values inside the con- useState , while uncon- browser
+
+    17.How do you handle forms in React?
+        by using onchange handler 
+
+    18.How do you implement conditional rendering in React?
+        we can use if condition to render an element 
+
+    19.What is the role of map() function in React?
+        Used to loop over data and render components.
+
+
+
+React State management 
+
+    State means the data your app needs to remember.
+    For example: Whether a user is logged in, what's in a shopping cart, which tab is open, etc.
+    React has a built-in way to manage state using useState, useReducer, and useContext.
+    But when apps grow big, we sometimes use external tools like Redux, Recoil, or Zustand to manage state across many components.
+
+    Context API
+        Think of it like a global variable you can share across components.
+        Normally you pass data from parent → child → grandchild using props. This is called prop drilling.  
+        Context lets you avoid that. You wrap your app with a Context Provider, and now any child can access that data directly.
+
+    Redux 
+        Redux is like a central warehouse that stores all your data (state).
+        Every time you want to read or update data, you go to Redux.
+            Action : You say what you want to do
+            Reducer : Updates the state
+            Store : where to store data ,Automatically tells React to re-render when something changes
+        Middlewares in Redux
+            They let you do extra things while updating state.
+            Example: logging actions, checking auth, or handling async calls like API requests.

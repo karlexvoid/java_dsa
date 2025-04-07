@@ -1,15 +1,42 @@
 bubble sort 
 
-4,3,5,1,2 
+    4,3,5,1,2 
 
 
-main(){
-    bubbleRecursion(arr,0,1);
-}
+    main(){
+        bubbleRecursion(arr,0);
+    }
+
+    f(arr) = compare update + f(arr) 5 times 
+
+    public static int[] bubbleRecursion(int[] arr, int count) {
+        if (count >= arr.length - 1) {
+            return arr;
+        }
+
+        for (int i = 0; i < arr.length - 1 - count; i++) {
+            if (arr[i] > arr[i + 1]) {
+                int temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+        }
+
+        return bubbleRecursion(arr, count + 1);
+    }
 
 
 
-f(arr) = compare update + f(arr) ,,, till i == arr.length - 1 and j == arr.length-2 
+selection sort 
+
+    find max and swap it 
+
+    f(arr,till length-1) = get max swap it + f(arr,lenth-2)
+    break condition : when count = 0
 
 
+
+
+
+ 
 

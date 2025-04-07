@@ -1,26 +1,34 @@
-    binary search 
-    sorting 
-recursion 
-linked list 
-stacks and Queues 
-Trees 
-maps  
-other imp alogo questions 
 
+notes and preparation : 
 
-intro to java : core
-OOPs 
-functions and methods 
-strings
-    pattern printing
-time and space comp
-maths for dsa 
+    java basics 
+    spring boot 
+    mysql 
 
-24 - 29 ---- recursion , maths and spact time complexity 
-30 - 05 ---- oops , strings , collections 
-06 - 12 ---- linkedlist and stack queues 
-13 - 19 ---- trees 
-20 - 26 ---- maps,graph and other important algo
+    java script
+    react 
+    node.js 
+    mongodb 
+
+    php 
+        
+
+DSA : 
+
+        binary search 
+        sorting 
+    recursion 
+    linked list 
+    stacks and Queues 
+    Trees 
+    maps  
+    other imp alogo questions 
+
+    strings
+        pattern printing
+    time and space comp
+    maths for dsa 
+
 
 
 must do questions for interview : 
@@ -130,3 +138,4 @@ Questions (0/75)
         To Be Revised : 
 
             how to reverse a number with recursion
+            string handling 

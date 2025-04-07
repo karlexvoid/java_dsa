@@ -55,7 +55,6 @@ linear search array
 linear search return all the indexes
 
 
-<<<<<<< HEAD
  f(arr,target,index,arraylist) = check store in array list + f(arr,target,index,arraylist)
 
  public static ArrayList<Integer> allIndexes(int[] arr,int target,int index ,ArrayList<Integer> result){
@@ -69,7 +68,6 @@ linear search return all the indexes
 
     return allIndexes(arr,target,index,result);
  }
-=======
 f(arr,target,index,arraylist) = check store in array list + f(arr,target,index,arraylist) 
 
 
@@ -157,4 +155,3 @@ rotated binary search using recursion
 
 
 
->>>>>>> d77ce2ceecd4ef16216ddc077e21ad9f4d56474b

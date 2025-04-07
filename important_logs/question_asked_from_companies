@@ -1,27 +1,79 @@
 Infosys : Senior java springboot developer
 
-    a brief intro and main languages
-    what is optional in java 
-    what is funtional interface 
-    what is dependency injection 
-    what is qualifier , bean 
-    what is rest controller in spring boot and get mapping 
-    What is java stream
-    what is difference between abstraction and inheritance 
-    flow of request in springboot
-    what are modifiers in java 
-    what is exception handling and how do you create a custom 
-    difference between static and final keyword
+    telephonic : 
+        basics 
+
+    1st technical : 
+
+        a brief intro and main languages
+        what is optional in java 
+        what is funtional interface 
+        what is dependency injection 
+        what is qualifier , bean 
+        what is rest controller in spring boot and get mapping 
+        what is java stream
+        what is difference between abstraction and inheritance 
+        flow of request in springboot
+        what are modifiers in java 
+        what is exception handling and how do you create a custom 
+        difference between static and final keyword
+
+
+Farenexus : java developer 
+    
+    telephonic :
+        basic
+    
+    1st technical : 
+
+        String question : frpm a long sentence , tell which word is most repeated 
+        How do you tell if two objects are equal or not 
+        Fetch the lowest 5th salary from emp table 
+        What are there in a http request , what is in the body of https request ?
+        What are different type of http request , different between get and post ? 
+        How to pass object array and array in general in the request body ?
+        What is autowired in spring boot ?
+        What if i don't want to use the dependency injection what other options do i have ?
+        What is jpa and hibernate ?
+
+
+All Heart Web : mern developer 
+
+    1st technical : 
+
+        create normal array out out of multiple array 
+            how does redux helps in state management 
+            what is shallow copy and deep copy
+        how does node js manages the async nature of javascript 
+            what is context 
+        how will you have 100 message send load on server 
+            what is event loop 
+            what are promsises 
+        difference between css3 and tailwind css
+
+
+LimeTray : mern developer 
+
+    telephonic : 
+        basic and form 
+    
+    Assignment : to build a task manager in react with certain guidelines 
+
+    1st technical : 
 
 
 
 Dextopia : php developer
 
-    tell about you experience and main languages
-    what is init set 
-    what is explode function
+    Telephonic : 
+        tell about you experience and main languages
+        what is init set 
+        what is explode function
 
 
 
-Amazon FTC : assesment 
-    two coding questions
+
+    
+
+
+

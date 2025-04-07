@@ -9,7 +9,7 @@ main(){
 }
 
 static void triangle(int row,int col,int total_row){
-    if(row < total_row){
+    if(row > total_row){
         return;
     }
     if(col <= row){

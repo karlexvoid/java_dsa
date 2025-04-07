@@ -1,0 +1,165 @@
+tell us about your roles and responsiblities in the work : 
+
+
+
+
+Oops : 
+
+    inheritance : taking behaviour and properties from parent class
+
+    abstraction : hidding the implementation details and only showing required features
+
+    polymorphism : Same method acts differently based on parameters or the object calling it.
+        Method Overloading (same method name, different parameters).
+        Method Overriding (same method name in parent & child class, but child modifies it).
+
+    encapsulation : Binding data (variables) and behavior (methods) together in a class and restricting direct access to some parts.
+
+
+java 8 features : 
+
+    lambda expression : short way to write a method without creating a separate function , reduces boiler plate code 
+    method references : shorter way to write a lambda expression
+    functional interface : interfaces with a single abstract method 
+    default and static methods in interface : ?
+    date and time api : helps with processing and handling the date and time 
+    stream api : stream api helps us to process the data declaratively
+    optional class : helps to avoid the null pointer exception errors there by avoiding the crashes in the application
+
+
+java 21 features : 
+
+    virtual threads 
+    record patterns 
+    scoped values 
+    foreign function api 
+
+
+some basic definations : 
+
+    function : a peice of code that does something and then returns something.
+    class : a peice of code that contains properties and methods 
+    method : a peice of code inside a class that performs an action , it must belong to a class 
+    object : implementation of a class with real values 
+
+    interface : only contains abstract methods (methods without implementation) and constant , it defines what a class 
+        must do do but not how it should do 
+
+
+
+access modifier : control the visibility of class , method or variable 
+
+    public : it can be accessed everywehre 
+    protected : pakacge and subcassed can access
+    private : only accesble with that same class 
+    default : only with in same package 
+
+
+Exception handling : is a way to handle errors without crashing the program 
+    we can create a custom exception by extending  exception or runtime exception class
+
+
+
+
+Dependency Injection (DI) is a design pattern where objects get their dependencies from an external source instead of creating them themselves.,,, it reduces tight coupling and promotes reusability 
+we can make use of @autowired to inject dependencies
+
+annotations : meta data that provides instructions to java/spring boot
+eg rest controller , auto wired , service etc 
+
+
+spring security : helps us to create a robust authentication , reducing writing lots of code 
+it provides us with security filter chain which we can also customize 
+    we can add what role has access to which route 
+    crsf enable or disable 
+    
+    
+Hibernate is an ORM (Object-Relational Mapping) framework used with JPA (Java Persistence API).
+
+profile : 	Activates beans based on the active environment profile
+qualifier : Selects a specific bean when multiple exist 
+primary : Marks a bean as the default when multiple exist
+
+
+static	Belongs to the class, not an instance	Used with variables, methods, blocks, and nested classes	Shared across all objects, loaded once in memory
+final	Prevents modification	Used with variables, methods, and classes	Value, method, or class cannot be changed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+spring boot : 
+
+main
+
+    package : a way to organize java classes like folders , eg - com.url.shortener
+
+    annotations : meta data that provides instructions to java/spring boot
+        eg - @SpringBootApplication ,,, Marks this as a Spring Boot app
+        this is combination of three annotations -
+            - @Configuration : marks this class as a configuration class
+            - @EnableAutoConfiguration : enable spring boot's auto configuration
+            - @ComponentScan : scans for components like @Controller , @Service , @Repository in the same package
+                and subpackages
+
+        @EnableJpaRepositories("com.url.shortener.repository") - Explicitly tells Spring Boot to look for JPA repository interfaces
+            inside the com.url.shortener.repository package.
+
+    SpringApplication.run(...) starts the Spring Boot application, setting up the embedded web server,
+        dependency injection, and other configurations.
+
+
+models
+
+    class level annotations : are annotations applied to a class to provide or configure its behaviour
+    eg - used in User model
+        @Entity : marks this class as JPA entity (maps to a database table)
+        @Table(name = "users") : Specifies that this entity maps to the users table in the database
+        @Data (lombok annotation) : Auto-generates getters, setters, toString(), equals(), and hashCode() methods.
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+        @Id : marks this a primary key
+        @GeneratedVal.... : Auto-generates the primary key using the database’s identity column (like AUTO_INCREMENT).
+
+    @OneToMany(mappedBy = "user")
+    private List<UrlMapping> urlMappings;
+
+        @OneToMany(mappedBy = "user") → Defines a one-to-many relationship
+        One User can have multiple UrlMapping entries.
+        mappedBy = "user" means the user field in UrlMapping is the foreign key reference.
+        List<UrlMapping> → Stores multiple UrlMapping objects for this user.
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+        @ManyToOne → Defines the many-to-one relationship (Many UrlMappings → One User).
+        @JoinColumn(name = "user_id") → Specifies the foreign key column in url_mappings.
+
+
+
