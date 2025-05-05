@@ -39,3 +39,27 @@ Question :
 
 
 important string : 
+
+    str.length() :                                                  counts no of char in string including empty spaces 
+    charAt(int index) :                                             Returns the character at the specified index
+    substring(int beginIndex) / substring(int, int) :               Returns a substring
+    indexOf(String s) / indexOf(char) :                             Returns the index of the first occurrence
+    lastIndexOf(String s)	                                        Returns the last occurrence
+    equals(String s) / equalsIgnoreCase()	                        Compares two strings for equality
+    compareTo(String s)	                                            Lexicographically compares two strings (return unicode diff of first char that is found different)
+    contains(CharSequence s)	                                    Checks if the string contains the given sequence
+    replace(char old, char new) / replaceAll(regex, replacement)	Replaces characters or substrings
+    toLowerCase() / toUpperCase()	                                Changes case
+    trim()	                                                        Removes leading and trailing spaces
+    split(String regex)	                                            Splits string using regex (returns array)
+    isEmpty() / isBlank()	                                        Checks if the string is empty or only has spaces
+    startsWith(String prefix) / endsWith(String suffix)	            Checks prefix/suffix
+    str.valueOf(int x)	                                            Converts data types to string
+
+
+
+regex handling rules  : 
+    "[^0-9]"	anything not a digit
+    "[^a-z]"    anything not a small case alphabet ,,, 
+    \\s+        one or more space 
+    eg.. to remove numbers and other chars and keep only alphabets : str.replaceAll("[^a-zA-Z]","")

@@ -3,32 +3,42 @@ notes and preparation :
 
     java basics 
     spring boot 
-    mysql 
-
+  
     java script
     react 
     node.js 
-    mongodb 
-
+    
+    mysql 
     php 
-        
+    mongodb   
 
-DSA : 
+DSA :
 
-        binary search 
-        sorting 
-    recursion 
-    linked list 
-    stacks and Queues 
-    Trees 
-    maps  
-    other imp alogo questions 
+    basics 
 
-    strings
-        pattern printing
-    time and space comp
-    maths for dsa 
+        oops
+            strings
+            sorting 
+            pattern printing
+        time and space comp
+        maths for dsa 
 
+
+    Important : 
+
+            binary search 
+        recursion 
+        linked list 
+        stacks and Queues 
+        hashmap , arraylist 
+        binary tree  
+        imp algos 
+
+
+
+    adv : 
+
+        maps and graphs 
 
 
 must do questions for interview : 

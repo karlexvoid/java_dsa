@@ -2,7 +2,7 @@
 React basics 
 
     1. What is React, and why is it used?
-        react is a front end lib based for building user interfaces using that uses reusable components.
+        react is a front end lib based for building user interfaces using uses reusable components.
 
     2. What are the main features of React?
         component based arcitecture
@@ -65,7 +65,7 @@ React basics
         React Portals allow you to render a component outside the main root DOM tree, like for modals or tooltips.
 
     16.What is the difference between controlled and uncontrolled components?
-        values inside the con- useState , while uncon- browser
+        values inside the con- data managed via react using useState , while uncon - data managed via dom 
 
     17.How do you handle forms in React?
         by using onchange handler 

@@ -72,8 +72,8 @@ funtions and scopes
         greet.apply(person) → same as call, but takes arguments as an array
         greet.bind(person) → returns a new function with this set to person, but doesn’t call it immediately
 
-    18.What happens when you return a function inside another function?
-        it creates a closure 
+                    18.What happens when you return a function inside another function?
+                        it creates a closure 
 
     19.What is function currying?
         Transforming a function that takes many arguments into a series of functions that take one.

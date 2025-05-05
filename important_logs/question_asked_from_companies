@@ -41,10 +41,10 @@ All Heart Web : mern developer
 
     1st technical : 
 
-        create normal array out out of multiple array 
+            create normal array out out of multiple array 
             how does redux helps in state management 
             what is shallow copy and deep copy
-        how does node js manages the async nature of javascript 
+            how does node js manages the async nature of javascript 
             what is context 
         how will you have 100 message send load on server 
             what is event loop 
@@ -55,20 +55,48 @@ All Heart Web : mern developer
 LimeTray : mern developer 
 
     telephonic : 
-        basic and form 
+        basic and assingment 
     
     Assignment : to build a task manager in react with certain guidelines 
 
     1st technical : 
+        context api , prop drilling 
+        custom hook 
+        localstorage management 
+        show error if the length is less than 6 of task text 
+        add priority filter in the assigment 
+        optimize switch case 
 
 
+Itechnolabs : mern developer
 
+    1st technical : 
+        basic intro 
+        what is map and filter , how is map different from foreach 
+        what are async/await and promises , scenario : for nested api calls which is better 
+        how do you handle state in react 
+        what is useState 
+        what third part apis have you worked with 
+        what is middle ware 
+        how do you handle form validation in backend 
+   
+
+        event loop 
+        suppose three fields are coming email , password and file how will event loop handle it 
+        graphql 
+        cluster 
+        view 
+        worker in node js 
+        store procedure in mysql 
+
+    
 Dextopia : php developer
 
     Telephonic : 
         tell about you experience and main languages
         what is init set 
         what is explode function
+
 
 
 

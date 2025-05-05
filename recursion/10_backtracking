@@ -1,0 +1,91 @@
+things to keep in mind : 
+    what we are doing 
+    how we are doing 
+    how do we know we need to apply back tracking 
+
+Basic maze logic without backtrack : 
+
+    static int maze(int r ,int c){
+        if(r == 1 || c == 1){
+            return 1;
+        }
+
+        int left = maze(r-1,c);
+        int right = maze(r,c-1);
+
+        return right + left;
+    }
+
+maze with blocks without backtrack 
+    return list of all path to go the destination while avoiding the blocks
+
+    public static void main(String args[]) {
+        
+        getPath("",int[][] blocked, int[] source, int[] target);
+    }
+
+    for 3 by 3 grid 
+    public static ArrayList<String> getPath(String path,int[][] blocked, int[] source, int[] target){
+
+        if(source[0] == target[0] && source[1] == target[1]){
+            ArrayList<String> result = new ArrayList<>();
+            result.add(path);
+            return result;
+        }
+
+        ArrayList<String> ans = new ArrayList<>();
+
+        //left 
+        if(can go left , next is not blocked){
+            source[0]--;
+            ans.add(getPath(path + "L",blocked,source,target)); 
+        }
+
+        //right 
+        if(can go right , next is not blocked){
+            go right 
+        }
+
+        //up 
+        if(can go up , next is not blocked){
+            go up 
+        }
+
+        //down 
+        if(can go down , next is not blocked){
+            go down 
+        }
+
+        //diagonal 
+        if(can go diagonal , next is not blocked){
+            go diagonal 
+        }
+
+        return ans;
+    }
+
+no of dice rolls with target with sum : https://leetcode.com/problems/number-of-dice-rolls-with-target-sum/
+
+    class Solution {
+        static final int MOD = 1_000_000_007;
+
+        public int numRollsToTarget(int n, int k, int target) {
+            Integer[][] dp = new Integer[n + 1][target + 1];
+            return countDiceRolls(k, n, target, dp);
+        }
+
+        static int countDiceRolls(int diceFaces, int diceLeft, int remainingTarget, Integer[][] dp) {
+            if (diceLeft == 0) {
+                return remainingTarget == 0 ? 1 : 0;
+            }
+            if (remainingTarget < 0) return 0;
+            if (dp[diceLeft][remainingTarget] != null) return dp[diceLeft][remainingTarget];
+
+            int count = 0;
+            for (int i = 1; i <= diceFaces; i++) {
+                count = (count + countDiceRolls(diceFaces, diceLeft - 1, remainingTarget - i, dp)) % MOD;
+            }
+
+            return dp[diceLeft][remainingTarget] = count;
+        }
+    }
